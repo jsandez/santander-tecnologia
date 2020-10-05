@@ -4,7 +4,7 @@ import com.santander.birras.controller.request.AuthenticationRequest;
 import com.santander.birras.controller.response.AuthenticationResponse;
 import com.santander.birras.security.JwtAuthenticationUtil;
 import com.santander.birras.service.UserService;
-import com.santander.birras.service.UserServiceImpl;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,6 +30,9 @@ public class AuthenticationController {
     JwtAuthenticationUtil jwtAuthenticationUtil;
 
     @PostMapping(value = "/authenticate")
+    @ApiOperation(value = "Autenticacion de usuarios.",
+        notes = "Autenticacion de usuarios con username y password para obtener el jwt token.",
+        response = AuthenticationResponse.class)
     public ResponseEntity<AuthenticationResponse> createAuthToken(@RequestBody AuthenticationRequest authenticationRequest) {
         try {
             authenticationManager.authenticate(

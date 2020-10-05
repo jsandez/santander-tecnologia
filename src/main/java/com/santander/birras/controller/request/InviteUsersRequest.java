@@ -1,10 +1,14 @@
 package com.santander.birras.controller.request;
 
+import io.swagger.annotations.ApiModelProperty;
+
 import java.util.List;
 
 public class InviteUsersRequest {
 
+    @ApiModelProperty(notes = "Id de la meetup a la cual quiero invitar usuarios")
     Long meetUpId;
+    @ApiModelProperty(notes = "Usuarios invitados")
     List<String> users;
 
     public Long getMeetUpId() {

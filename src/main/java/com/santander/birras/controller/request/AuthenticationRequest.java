@@ -1,8 +1,12 @@
 package com.santander.birras.controller.request;
 
+import io.swagger.annotations.ApiModelProperty;
+
 public class AuthenticationRequest {
 
+    @ApiModelProperty(notes = "Login del usuario")
     private String username;
+    @ApiModelProperty(notes = "Password del usuario")
     private String password;
 
     public AuthenticationRequest() {}

@@ -1,9 +1,14 @@
 package com.santander.birras.controller.request;
 
+import io.swagger.annotations.ApiModelProperty;
+
 public class CreateUserRequest {
 
+    @ApiModelProperty(notes = "Username del usuario a crear")
     String username;
+    @ApiModelProperty(notes = "Password del usuario a crear")
     String password;
+    @ApiModelProperty(notes = "Rol del usuario a crear")
     String role;
 
     public String getUsername() {

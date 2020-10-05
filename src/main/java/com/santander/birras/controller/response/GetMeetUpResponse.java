@@ -1,14 +1,17 @@
 package com.santander.birras.controller.response;
 
-import com.santander.birras.model.MeetUp;
 import com.santander.birras.model.WeatherDay;
+import io.swagger.annotations.ApiModelProperty;
 
 import java.util.List;
 
 public class GetMeetUpResponse {
 
+    @ApiModelProperty(notes = "Id de la meetup")
     private Long id;
+    @ApiModelProperty(notes = "Fecha y clima de la meetup")
     private WeatherDay weatherDay;
+    @ApiModelProperty(notes = "Usuarios que forman parte de la meetup")
     private List<String> users;
 
     public Long getId() {

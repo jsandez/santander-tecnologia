@@ -1,11 +1,15 @@
 package com.santander.birras.controller.request;
 
+import io.swagger.annotations.ApiModelProperty;
+
 import java.time.LocalDate;
 import java.util.List;
 
 public class CreateMeetupRequest {
 
+    @ApiModelProperty(notes = "Dia que se realizara la meetup")
     private LocalDate dateMeetup;
+    @ApiModelProperty(notes = "Usuarios que van a ser invitados")
     private List<String> users;
 
     public LocalDate getDateMeetup() {

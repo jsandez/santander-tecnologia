@@ -4,6 +4,7 @@ import com.santander.birras.controller.request.CheckInRequest;
 import com.santander.birras.controller.request.CreateUserRequest;
 import com.santander.birras.controller.request.InviteUsersRequest;
 import com.santander.birras.controller.request.SubscribeRequest;
+import com.santander.birras.controller.response.GetBoxOfBeersResponse;
 import com.santander.birras.exception.MeetUpNotExist;
 import com.santander.birras.exception.UserAlreadyExistException;
 import com.santander.birras.exception.UserIsNotInMeetup;
@@ -11,6 +12,7 @@ import com.santander.birras.exception.UserNotExistException;
 import com.santander.birras.service.MeetUpService;
 import com.santander.birras.service.MeetUpUsersService;
 import com.santander.birras.service.UserService;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -35,6 +37,9 @@ public class UserController {
     private MeetUpService meetUpService;
 
     @PostMapping(value = "/create")
+    @ApiOperation(value = "Creacion de usuarios",
+            notes = "Creacion de usuarios del sistema, con su respectivo rol",
+            response = String.class)
     public ResponseEntity createUser(@RequestBody CreateUserRequest request) {
         try {
             userServiceImpl.createUser(request);
@@ -47,6 +52,9 @@ public class UserController {
     }
 
     @PostMapping(value = "/invite")
+    @ApiOperation(value = "Invitacion de usuarios",
+            notes = "Invitacion de usuarios a meetup",
+            response = String.class)
     public ResponseEntity inviteUsers(@RequestBody InviteUsersRequest request) {
         try {
             meetUpService.validateMeetup(request.getMeetUpId());
@@ -65,6 +73,9 @@ public class UserController {
     }
 
     @PostMapping(value = "/subscribe")
+    @ApiOperation(value = "Suscripcion de usuarios",
+            notes = "Suscripcion de usuarios a una meetup",
+            response = String.class)
     public ResponseEntity subscribeMeetup(@RequestBody SubscribeRequest request) {
         try {
             meetUpService.validateMeetup(request.getMeetUpId());
@@ -77,6 +88,9 @@ public class UserController {
     }
 
     @PostMapping(value = "/checkin")
+    @ApiOperation(value = "Checkin de usuarios",
+            notes = "Checkin de usuarios para avisar que asistieron a cierta meetup",
+            response = String.class)
     public ResponseEntity checkInMeetup(@RequestBody CheckInRequest request) {
         try {
             meetUpService.validateMeetup(request.getMeetUpId());

@@ -8,7 +8,6 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 import static junit.framework.TestCase.assertTrue;
 
-
 @RunWith(MockitoJUnitRunner.class)
 public class WeatherDayFacytoryTests {
 

@@ -14,6 +14,8 @@ La base de datos que se uso es H2, la cual tambien es controlada por la esta apl
 
 Para consultar el clima usamos la api https://rapidapi.com/community/api/open-weather-map.
 
+Para especificar la api y sus endopoints, se uso Swagger
+
 #### Datos de la aplicación
 
 Algunas cosas a tener en cuenta:
@@ -33,6 +35,10 @@ Algunas cosas a tener en cuenta:
 El header debe ser pasado e la siguienter forma
 
 `Bearer <jwt token devuelto por el endpoint>`
+
+#### Especificacion de la API
+
+Para obtener informacion de la API por favor dirigirse a http://localhost:8080/swagger-ui.html#/
 
 #### Algunas cosas a considerar
 Dado que la API de clima es paga para obtener el clima de 16 o 30 días, usamos el endpoint de solo 5 dias para este challenge. Si armarmos una meetup mayor a hoy + 5 dias en adelante, nos devolvera temperatura 0 por default.
