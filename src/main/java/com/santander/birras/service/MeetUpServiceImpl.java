@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service("meetUpService")
+@Service
 public class MeetUpServiceImpl implements MeetUpService{
 
     public static Float BEERS_BY_BOX = 6.00f;
