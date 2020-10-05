@@ -20,7 +20,7 @@ public class DbInit {
     private void postConstruct() {
         if (userRepository.findByUsername("santander-admin") == null) {
             User admin = new User();
-            admin.setUsername("santander-user");
+            admin.setUsername("santander-admin");
             admin.setPassword(bCryptPasswordEncoder.encode("tecnologia"));
             admin.setRole("ADMIN");
             userRepository.save(admin);
